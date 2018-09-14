@@ -10,6 +10,7 @@ by Hao Tang, Wei Wang, Dan Xu, Yan Yan, Nicu Sebe. [Arxiv Paper](https://arxiv.o
 * Python 3
 * CPU or Nvidia GPU + CUDA CuDNN
 * Pytorch 0.3+
+* Torch
 
 ## Datasets
 
@@ -31,4 +32,4 @@ If you use this code for your research, please cite our paper.
 ```
 
 ## Acknowledgments
-Our code is inspired by [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
+Our code is inspired by [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).

@@ -10,7 +10,7 @@ by Hao Tang, Wei Wang, Dan Xu, Yan Yan, Nicu Sebe. [Arxiv Paper](https://arxiv.o
 * Python 3
 * CPU or Nvidia GPU + CUDA CuDNN
 * Pytorch 0.3+
-* Torch
+* Torchvision
 
 ## Datasets
 

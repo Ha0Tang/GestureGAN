@@ -4,7 +4,22 @@
 by Hao Tang, Wei Wang, Dan Xu, Yan Yan, Nicu Sebe. [Arxiv Paper](https://arxiv.org/abs/1808.04859)
 
 
+## Prerequisites 
+
+* Linux or macOS
+* Python 3
+* CPU or Nvidia GPU + CUDA CuDNN
+* Pytorch 0.3+
+
+## Datasets
+
+## Traing
+
+## Testing
+
+
 ## Citation
+If you use this code for your research, please cite our paper.
 
 ```
 @article{tang2018gesturegan,
@@ -15,3 +30,5 @@ by Hao Tang, Wei Wang, Dan Xu, Yan Yan, Nicu Sebe. [Arxiv Paper](https://arxiv.o
 }
 ```
 
+## Acknowledgments
+Our code is inspired by [pytorch-CycleGAN-and-pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)

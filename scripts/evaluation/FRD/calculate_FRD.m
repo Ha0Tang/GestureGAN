@@ -1,10 +1,9 @@
 % close all; clear all; clc
 
-Image_folder_name ='/data4/hao/retrieved_data/results_from_other/all_senz3d_cyc01_id001_vgg1000_l1800_twocyc_286_gesture/test_latest';
-% Image_folder_name ='/Users/hao/Desktop/iccv19_show/results/all_ntu_cyc01_id0001/test_latest';
+Image_folder_name ='./data';
 
-real_image_folder=strcat(Image_folder_name,'/realimage_B');
-fake_image_folder=strcat(Image_folder_name,'/fakeimage_B');
+real_image_folder=strcat(Image_folder_name,'/realimage');
+fake_image_folder=strcat(Image_folder_name,'/fakeimage');
 
 Image =  dir( real_image_folder );  
 

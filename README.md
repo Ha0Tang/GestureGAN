@@ -4,10 +4,10 @@
 
 ![GestureGAN demo](https://github.com/Ha0Tang/SelectionGAN/blob/master/imgs/GestureGAN.gif)
 
-# GestureGAN for Hand Gesture-to-Gesture Translation
+# GestureGAN for Image-to-Image Translation
 
-## GestureGAN Framework
-![GestureGAN Framework](./imgs/framework.jpg)
+## Framework
+![Framework](./imgs/framework.jpg)
 
 ## Comparison with State-of-the-Art Image-to-Image Transaltion Methods
 ![Framework Comparison](./imgs/comparison.jpg)

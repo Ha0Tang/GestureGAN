@@ -143,14 +143,14 @@ Use `--how_many` to specify the maximum number of images to generate. By default
 ## Code Structure
 
 - `train.py`, `test.py`: the entry point for training and testing.
-- `models/selectiongan_model.py`: creates the networks, and compute the losses
+- `models/gesturegan_model.py`: creates the networks, and compute the losses
 - `models/networks/`: defines the architecture of all models for selectiongan
 - `options/`: creates option lists using `argparse` package. More individuals are dynamically added in other files as well. Please see the section below.
 - `data/`: defines the class for loading images and semantic maps.
 
 ## Evaluation Code
 
-We use several metrics to evaluate the quality of the generated images.
+We use several metrics to evaluate the quality of the generated images:
 
 - Hand gesture-to-gesture translation: [Inception Score (IS)](https://github.com/openai/improved-gan) **|** [Fréchet Inception Distance (FID)](https://github.com/bioinf-jku/TTUR) **|** [PSNR](https://github.com/Ha0Tang/GestureGAN/blob/master/scripts/evaluation/compute_psnr.lua), need install `Lua` **|** [Fréchet ResNet Distance (FRD)](https://github.com/Ha0Tang/GestureGAN/blob/master/scripts/evaluation/FRD/calculate_FRD.m), need install `MATLAB 2016+`
 - Cross-view image translation: [Inception Score](https://github.com/Ha0Tang/SelectionGAN/blob/master/scripts/evaluation/compute_topK_KL.py), need install `python 2.7` **|** [Top-k prediction accuracy](https://github.com/Ha0Tang/SelectionGAN/blob/master/scripts/evaluation/compute_accuracies.py), need install `python 2.7` **|** [KL score](https://github.com/Ha0Tang/SelectionGAN/blob/master/scripts/evaluation/KL_model_data.py), need install `python 2.7` **|** 

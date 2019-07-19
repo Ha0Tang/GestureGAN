@@ -1,4 +1,4 @@
-% close all; clear all; clc
+close all; clear all; clc
 
 Image_folder_name ='./data';
 

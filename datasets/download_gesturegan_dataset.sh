@@ -8,9 +8,9 @@ fi
 echo "Specified [$FILE]"
 
 URL=http://disi.unitn.it/~hao.tang/dataset/GestureGAN/$FILE.tar.gz
-TAR_FILE=./datasets/$FILE.tar.gz
-TARGET_DIR=./datasets/$FILE/
+TAR_FILE=./$FILE.tar.gz
+TARGET_DIR=./$FILE/
 wget -N $URL -O $TAR_FILE
 mkdir -p $TARGET_DIR
-tar -zxvf $TAR_FILE -C ./datasets/
+tar -zxvf $TAR_FILE -C ./
 rm $TAR_FILE

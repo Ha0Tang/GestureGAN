@@ -1,14 +1,14 @@
 FILE=$1
 
-if [[ $FILE != "dayton" && $FILE != "cvusa" && $FILE != "ego2top" ]]; 
-	then echo "Available datasets are dayton, cvusa, ego2top"
+if [[ $FILE != "ntu_image_skeleton" && $FILE != "senz3d_skeleton"]]; 
+	then echo "Available datasets are ntu_image_skeleton, senz3d_skeleton"
 	exit 1
 fi
 
 
 echo "Specified [$FILE]"
 
-URL=http://disi.unitn.it/~hao.tang/dataset/SelectionGAN/$FILE.tar.gz
+URL=http://disi.unitn.it/~hao.tang/dataset/GestureGAN/$FILE.tar.gz
 TAR_FILE=./datasets/$FILE.tar.gz
 TARGET_DIR=./datasets/$FILE/
 wget -N $URL -O $TAR_FILE

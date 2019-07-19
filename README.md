@@ -57,7 +57,7 @@ These datasets must be downloaded beforehand. Please download them on the respec
 
 **Preparing NTU Hand Digit Dataset**. Since the original download link cannot access, we provide this dataset here. We adopt [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) to generate hand skeletons and use them as training data in our experiments. Note that we filter out failure cases in hand gesture estimation for training and testing. Please cite their papers if you use this dataset. Train/Test splits for Dayton dataset can be downloaded from [here](https://github.com/Ha0Tang/GestureGAN/tree/master/datasets/ntu_split).
 Download images and the crossponding hand skeletons:
-`bash ./datasets/download_gesturegan_dataset.sh ntu`
+```bash ./datasets/download_gesturegan_dataset.sh ntu```
 
 **Preparing Creative Senz3D Dataset**. The dataset can be downloaded [here](https://lttm.dei.unipd.it//downloads/gesture/#senz3d). We adopt [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) to generate hand skeletons and use them as training data in our experiments. Note that we filter out failure cases in hand gesture estimation for training and testing. Please cite their papers if you use this dataset.
 Train/Test splits for Creative Senz3D dataset can be downloaded from [here](https://github.com/Ha0Tang/GestureGAN/tree/master/datasets/senz3d_split).

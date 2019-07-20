@@ -60,6 +60,11 @@ Download images and the crossponding hand skeletons of this dataset:
 ```bash
 bash ./datasets/download_gesturegan_dataset.sh ntu_image_skeleton
 ```
+Then run the following MATLAB script to generate training and testing data:
+```bash
+cd datasets
+matlab -nodesktop -nosplash -r "prepare_ntu_data"
+```
 
 **Preparing Creative Senz3D Dataset**. The dataset can be downloaded [here](https://lttm.dei.unipd.it//downloads/gesture/#senz3d). We adopt [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) to generate hand skeletons and use them as training data in our experiments. Note that we filter out failure cases in hand gesture estimation for training and testing. Please cite their papers if you use this dataset.
 Train/Test splits for Creative Senz3D dataset can be downloaded from [here](https://github.com/Ha0Tang/GestureGAN/tree/master/datasets/senz3d_split).

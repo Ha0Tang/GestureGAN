@@ -1,14 +1,14 @@
 clear all;close all;clc;
 
-image_folder='./datasets/senz3d_image_skeleton/senz3d_image';
-skeleton_folder='/datasets/senz3d_image_skeleton/senz3d_skeleton';
+image_folder='./senz3d_image_skeleton/senz3d_image';
+skeleton_folder='./senz3d_image_skeleton/senz3d_skeleton';
 
-txt_file ='./datasets/senz3d_split/senz3d_test.txt';
-save_folder='./datasets/senz3d/test';
+txt_file ='./senz3d_split/senz3d_test.txt';
+save_folder='./senz3d/test';
 
 % Uncomment for training data
-% txt_file ='./datasets/senz3d_split/senz3d_train.txt';
-% save_folder='./datasets/senz3d/train';
+% txt_file ='./senz3d_split/senz3d_train.txt';
+% save_folder='./senz3d/train';
 
 if ~isfolder(save_folder)
     mkdir(save_folder)

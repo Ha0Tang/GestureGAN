@@ -245,12 +245,13 @@ This source code is inspired by [Pix2pix](https://github.com/junyanz/pytorch-Cyc
 ## Related Projects (Controllable Image-to-Image Translation)
 
 ### Keypoint/Skeleton Guided Person/Gesture/Facial Image Generation
+Person
 - [Progressive Pose Attention for Person Image Generation (CVPR 2019, PyTorch)](https://github.com/tengteng95/Pose-Transfer)
 - [Unsupervised Person Image Generation with Semantic Parsing Transformation (CVPR 2019, PyTorch)](https://github.com/SijieSong/person_generation_spt)
 - [Disentangled Person Image Generation (CVPR 2018, Tensorflow)](https://github.com/charliememory/Disentangled-Person-Image-Generation)
 - [Deformable GANs for Pose-Based Human Image Generation (CVPR 2018, Tensorflow)](https://github.com/AliaksandrSiarohin/pose-gan)
 - [Pose Guided Person Image Generation (NIPS 2017, Tensorflow)](https://github.com/charliememory/Pose-Guided-Person-Image-Generation)
-
+Gesture
 - [Gesture-to-Gesture Translation in the Wild via Category-Independent Conditional Maps (ACM MM 2019, PyTorch)](https://github.com/yhlleo/TriangleGAN)
 
 ### Semantic Map Guided Cross-View Image Translation

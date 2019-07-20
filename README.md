@@ -62,7 +62,6 @@ bash ./datasets/download_gesturegan_dataset.sh ntu_image_skeleton
 ```
 Then run the following MATLAB script to generate training and testing data:
 ```bash
-cd datasets
 matlab -nodesktop -nosplash -r "prepare_ntu_data"
 ```
 
@@ -71,6 +70,10 @@ Train/Test splits for Creative Senz3D dataset can be downloaded from [here](http
 Download images and the crossponding hand skeletons of this dataset:
 ```bash
 bash ./datasets/download_gesturegan_dataset.sh senz3d_image_skeleton
+```
+Then run the following MATLAB script to generate training and testing data:
+```bash
+matlab -nodesktop -nosplash -r "prepare_senz3d_data"
 ```
 
 **Preparing Dayton Dataset**. The dataset can be downloaded [here](https://github.com/lugiavn/gt-crossview). In particular, you will need to download dayton.zip. 

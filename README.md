@@ -242,7 +242,7 @@ If you use this code for your research, please cite our papers.
 ## Acknowledgments
 This source code is inspired by [Pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). We want to thank the NVIDIA Corporation for the donation of the TITAN Xp GPUs used in this work.
 
-## Related Projects
+## Related Projects (Controllable Image-to-Image Translation)
 
 ### Keypoint/Skeleton Guided Person/Gesture/Facial Image Generation
 - [Progressive Pose Attention for Person Image Generation (CVPR 2019, PyTorch)](https://github.com/tengteng95/Pose-Transfer)

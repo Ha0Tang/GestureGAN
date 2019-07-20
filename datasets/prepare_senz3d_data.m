@@ -6,9 +6,9 @@ skeleton_folder='/datasets/senz3d_image_skeleton/senz3d_skeleton';
 txt_file ='./datasets/senz3d_split/senz3d_test.txt';
 save_folder='./datasets/senz3d/test';
 
-// Uncomment for training data
-// txt_file ='./datasets/senz3d_split/senz3d_train.txt';
-// save_folder='./datasets/senz3d/train';
+% Uncomment for training data
+% txt_file ='./datasets/senz3d_split/senz3d_train.txt';
+% save_folder='./datasets/senz3d/train';
 
 if ~isfolder(save_folder)
     mkdir(save_folder)

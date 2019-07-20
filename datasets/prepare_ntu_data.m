@@ -6,9 +6,9 @@ skeleton_folder='/datasets/ntu_image_skeleton/ntu_skeleton';
 txt_file ='./datasets/ntu_split/ntu_test.txt';
 save_folder='./datasets/ntu/test';
 
-// Uncomment for training data
-// txt_file ='./datasets/ntu_split/ntu_train.txt';
-// save_folder='./datasets/ntu/train';
+% Uncomment for training data
+% txt_file ='./datasets/ntu_split/ntu_train.txt';
+% save_folder='./datasets/ntu/train';
 
 if ~isfolder(save_folder)
     mkdir(save_folder)

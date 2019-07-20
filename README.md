@@ -142,8 +142,39 @@ To fine-tune a pre-trained model, or resume the previous training, use the `--co
 
 Testing is similar to testing pretrained models.
 
+For NTU dataset:
 ```bash
-python test.py --dataroot [path_to_dataset] --name [type]_pretrained --model selectiongan --which_model_netG unet_256 --which_direction AtoB --dataset_mode aligned --norm batch --gpu_ids 0 --batchSize [BS] --loadSize [LS] --fineSize [FS] --no_flip --eval
+python test.py --dataroot ./datasets/ntu --name ntu_gesturegan_twocycle --model gesturegan_twocycle --which_model_netG resnet_9blocks --which_direction AtoB --dataset_mode aligned --norm instance --gpu_ids 0 --batchSize 4 --loadSize 286 --fineSize 256 --no_flip;
+```
+
+For Senz3D dataset:
+```bash
+python test.py --dataroot ./datasets/senz3d --name senz3d_gesturegan_twocycle --model gesturegan_twocycle --which_model_netG resnet_9blocks --which_direction AtoB --dataset_mode aligned --norm instance --gpu_ids 0 --batchSize 4 --loadSize 286 --fineSize 256 --no_flip;
+```
+
+For CVUSA dataset:
+```bash
+python test.py --dataroot ./datasets/cvusa --name cvusa_gesturegan_onecycle --model gesturegan_onecycle --which_model_netG resnet_9blocks --which_direction AtoB --dataset_mode aligned --norm instance --gpu_ids 0 --batchSize 4 --loadSize 286 --fineSize 256 --no_flip;
+```
+
+For Dayton (a2g direction, 256) dataset:
+```bash
+python test.py --dataroot ./datasets/dayton_a2g --name dayton_a2g_gesturegan_onecycle --model gesturegan_onecycle --which_model_netG resnet_9blocks --which_direction AtoB --dataset_mode aligned --norm instance --gpu_ids 0 --batchSize 4 --loadSize 286 --fineSize 256 --no_flip;
+```
+
+For Dayton (g2a direction, 256) dataset:
+```bash
+python test.py --dataroot ./datasets/dayton_g2a --name dayton_g2a_gesturegan_onecycle  --model gesturegan_onecycle  --which_model_netG resnet_9blocks --which_direction AtoB --dataset_mode aligned --norm instance --gpu_ids 0 --batchSize 4 --loadSize 286 --fineSize 256 --no_flip;
+```
+
+For Dayton (a2g direction, 64) dataset:
+```bash
+python test.py --dataroot ./datasets/dayton_a2g --name dayton_g2a_64_gesturegan_onecycle --model gesturegan_onecycle --which_model_netG resnet_9blocks --which_direction AtoB --dataset_mode aligned --norm instance --gpu_ids 0 --batchSize 16 --loadSize 72 --fineSize 64 --no_flip;
+```
+
+For Dayton (g2a direction, 64) dataset:
+```bash
+python test.py --dataroot ./datasets/dayton_g2a --name dayton_g2a_64_gesturegan_onecycle --model gesturegan_onecycle --which_model_netG resnet_9blocks --which_direction AtoB --dataset_mode aligned --norm instance --gpu_ids 0 --batchSize 16 --loadSize 72 --fineSize 64 --no_flip;
 ```
 
 Use `--how_many` to specify the maximum number of images to generate. By default, it loads the latest checkpoint. It can be changed using `--which_epoch`.

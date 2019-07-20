@@ -62,7 +62,7 @@ bash ./datasets/download_gesturegan_dataset.sh ntu_image_skeleton
 ```
 Then run the following MATLAB script to generate training and testing data:
 ```bash
-cd  datasets/
+cd datasets/
 matlab -nodesktop -nosplash -r "prepare_ntu_data"
 ```
 
@@ -74,7 +74,7 @@ bash ./datasets/download_gesturegan_dataset.sh senz3d_image_skeleton
 ```
 Then run the following MATLAB script to generate training and testing data:
 ```bash
-cd  datasets/
+cd datasets/
 matlab -nodesktop -nosplash -r "prepare_senz3d_data"
 ```
 

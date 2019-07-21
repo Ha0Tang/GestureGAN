@@ -32,7 +32,11 @@ class GestureGANTwoCycleModel(BaseModel):
         # specify the training losses you want to print out. The program will call base_model.get_current_losses
         self.loss_names = ['G_GAN_D1',  'G_GAN_D2', 'G_L1', 'G_VGG', 'reg', 'G','D1','D2']
         # specify the images you want to save/display. The program will call base_model.get_current_visuals
-        self.visual_names = ['real_A', 'real_D', 'fake_B', 'real_B', 'real_C', 'recovery_A']
+        if self.opt.saveDisk:
+            self.visual_names = ['real_A', 'fake_B', 'real_B', 'fake_A']
+        else:
+            self.visual_names = ['real_A', 'real_D', 'fake_B', 'real_B', 'real_C', 'recovery_A', 'identity_A', 'fake_A', 'recovery_B', 'identity_B']
+
         # self.visual_names = ['fake_B', 'fake_D']
         # specify the models you want to save to the disk. The program will call base_model.save_networks and base_model.load_networks
         if self.isTrain:
@@ -63,11 +67,6 @@ class GestureGANTwoCycleModel(BaseModel):
 
             # initialize optimizers
             self.optimizers = []
-            # self.optimizer_G = torch.optim.Adam(self.netG.parameters(),
-            #                                     lr=opt.lr, betas=(opt.beta1, 0.999))
-            # self.optimizer_D = torch.optim.Adam(self.netD.parameters(),
-            #                                     lr=opt.lr, betas=(opt.beta1, 0.999))
-
             self.optimizer_G = torch.optim.Adam(self.netG.parameters(),
                                                 lr=opt.lr, betas=(opt.beta1, 0.999))
             self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD1.parameters(),self.netD2.parameters()),
@@ -86,7 +85,6 @@ class GestureGANTwoCycleModel(BaseModel):
 
     def forward(self):
         combine_realA_realD=torch.cat((self.real_A, self.real_D), 1)
-        # combine_ACD=torch.cat((self.real_A, self.real_D), 1)
         self.fake_B = self.netG(combine_realA_realD)
         combine_fakeB_realC=torch.cat((self.fake_B, self.real_C), 1)
         self.recovery_A = self.netG(combine_fakeB_realC)

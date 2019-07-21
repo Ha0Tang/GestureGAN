@@ -32,7 +32,11 @@ class GestureGANOneCycleModel(BaseModel):
         # specify the training losses you want to print out. The program will call base_model.get_current_losses
         self.loss_names = ['G_GAN_D1',  'G_GAN_D2', 'G_L1', 'G_VGG', 'reg', 'G' , 'D1_real', 'D1_fake','D1', 'D2_real', 'D2_fake','D2']
         # specify the images you want to save/display. The program will call base_model.get_current_visuals
-        self.visual_names = ['real_A', 'real_D', 'fake_B', 'real_B', 'real_C', 'fake_A']
+        if self.opt.saveDisk:
+            self.visual_names = ['real_A', 'fake_B', 'real_B']
+        else:
+            self.visual_names = ['real_A', 'real_D', 'fake_B', 'real_B', 'real_C', 'recovery_A', 'identity_A']
+        
         # self.visual_names = ['fake_B', 'fake_D']
         # specify the models you want to save to the disk. The program will call base_model.save_networks and base_model.load_networks
         if self.isTrain:
@@ -89,7 +93,7 @@ class GestureGANOneCycleModel(BaseModel):
         # combine_ACD=torch.cat((self.real_A, self.real_D), 1)
         self.fake_B = self.netG(combine_AD)
         combine_BC=torch.cat((self.fake_B, self.real_C), 1)
-        self.fake_A = self.netG(combine_BC)
+        self.recovery_A = self.netG(combine_BC)
 
         combine_AC=torch.cat((self.real_A, self.real_C), 1)
         self.identity_A = self.netG(combine_AC)
@@ -140,28 +144,16 @@ class GestureGANOneCycleModel(BaseModel):
         pred_D2_fake = self.netD2(fake_ADB)
         self.loss_G_GAN_D2 = self.criterionGAN(pred_D2_fake, True)
 
-
-        ###########################
-        # self.fake_A_red = self.fake_A[:,0:1,:,:]
-        # self.fake_A_green = self.fake_A[:,1:2,:,:]
-        # self.fake_A_blue = self.fake_A[:,2:3,:,:]
-        # # print(self.fake_A_red.size())
-        # self.real_A_red = self.real_A[:,0:1,:,:]
-        # self.real_A_green = self.real_A[:,1:2,:,:]
-        # self.real_A_blue = self.real_A[:,2:3,:,:]
-
-        ###########################
-
         self.fake_B_red = self.fake_B[:,0:1,:,:]
         self.fake_B_green = self.fake_B[:,1:2,:,:]
         self.fake_B_blue = self.fake_B[:,2:3,:,:]
-        # print(self.fake_A_red.size())
+
         self.real_B_red = self.real_B[:,0:1,:,:]
         self.real_B_green = self.real_B[:,1:2,:,:]
         self.real_B_blue = self.real_B[:,2:3,:,:]
 
         # second, G(A)=B
-        self.loss_G_L1 = (self.criterionL1(self.fake_B_red, self.real_B_red) + self.criterionL1(self.fake_B_green, self.real_B_green) + self.criterionL1(self.fake_B_blue, self.real_B_blue)) * self.opt.lambda_L1 + self.criterionL1(self.fake_B, self.real_B) * self.opt.lambda_L1 + self.criterionL1(self.fake_A, self.real_A) * self.opt.cyc_L1 + self.criterionL1(self.identity_A, self.real_A) * self.opt.lambda_identity
+        self.loss_G_L1 = (self.criterionL1(self.fake_B_red, self.real_B_red) + self.criterionL1(self.fake_B_green, self.real_B_green) + self.criterionL1(self.fake_B_blue, self.real_B_blue)) * self.opt.lambda_L1 + self.criterionL1(self.fake_B, self.real_B) * self.opt.lambda_L1 + self.criterionL1(self.recovery_A, self.real_A) * self.opt.cyc_L1 + self.criterionL1(self.identity_A, self.real_A) * self.opt.lambda_identity
 
         self.loss_G_VGG = self.criterionVGG(self.fake_B, self.real_B) * self.opt.lambda_feat
 

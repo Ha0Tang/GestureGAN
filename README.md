@@ -212,9 +212,9 @@ Use `--how_many` to specify the maximum number of images to generate. By default
 ## Code Structure
 
 - `train.py`, `test.py`: the entry point for training and testing.
-- `models/gesturegan_onecycle_model.py`, `models/gesturegan_twocycle_model.py`: creates the networks, and compute the losses
-- `models/networks/`: defines the architecture of all models for selectiongan
-- `options/`: creates option lists using `argparse` package. More individuals are dynamically added in other files as well. Please see the section below.
+- `models/gesturegan_onecycle_model.py`, `models/gesturegan_twocycle_model.py`: creates the networks, and compute the losses.
+- `models/networks/`: defines the architecture of all models for gesturegan.
+- `options/`: creates option lists using `argparse` package.
 - `data/`: defines the class for loading images and controllable structures.
 
 ## Evaluation Code

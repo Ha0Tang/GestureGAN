@@ -249,6 +249,8 @@ Person
 - [Dense Intrinsic Appearance Flow for Human Pose Transfer(CVPR 2019, PyTorch)](https://github.com/ly015/intrinsic_flow)
 - [Progressive Pose Attention for Person Image Generation (CVPR 2019, PyTorch)](https://github.com/tengteng95/Pose-Transfer)
 - [Unsupervised Person Image Generation with Semantic Parsing Transformation (CVPR 2019, PyTorch)](https://github.com/SijieSong/person_generation_spt)
+- [Pose-Normalized Image Generation for Person Re-identification (ECCV 2018, PyTorch)](https://github.com/naiq/PN_GAN)
+- [Everybody Dance Now (ECCVW 2018, PyTorch)](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow)
 - [FD-GAN: Pose-guided Feature Distilling GAN for Robust Person Re-identification (NIPS 2018, PyTorch)](https://github.com/yxgeee/FD-GAN)
 - [Disentangled Person Image Generation (CVPR 2018, Tensorflow)](https://github.com/charliememory/Disentangled-Person-Image-Generation)
 - [Deformable GANs for Pose-Based Human Image Generation (CVPR 2018, Tensorflow)](https://github.com/AliaksandrSiarohin/pose-gan)

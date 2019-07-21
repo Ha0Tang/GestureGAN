@@ -246,6 +246,7 @@ This source code is inspired by [Pix2pix](https://github.com/junyanz/pytorch-Cyc
 
 ### Keypoint/Skeleton Guided Person/Gesture/Facial Image Generation
 Person
+- [Dense Intrinsic Appearance Flow for Human Pose Transfer(CVPR 2019, PyTorch)](https://github.com/ly015/intrinsic_flow)
 - [Progressive Pose Attention for Person Image Generation (CVPR 2019, PyTorch)](https://github.com/tengteng95/Pose-Transfer)
 - [Unsupervised Person Image Generation with Semantic Parsing Transformation (CVPR 2019, PyTorch)](https://github.com/SijieSong/person_generation_spt)
 - [FD-GAN: Pose-guided Feature Distilling GAN for Robust Person Re-identification (NIPS 2018, PyTorch)](https://github.com/yxgeee/FD-GAN)

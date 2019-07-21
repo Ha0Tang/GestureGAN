@@ -89,10 +89,10 @@ Of course, you can use GestureGAN for your own datasets and tasks, such landmark
 
 Once the dataset is ready. The result images can be generated using pretrained models.
 
-1. You can download a pretrained model (e.g. ntu) with the following script:
+1. You can download a pretrained model (e.g. ntu_gesturegan_twocycle) with the following script:
 
 ```
-bash ./scripts/download_gesturegan_model.sh ntu
+bash ./scripts/download_gesturegan_model.sh ntu_gesturegan_twocycle
 ```
 The pretrained model is saved at `./checkpoints/[type]_pretrained`. Check [here](https://github.com/Ha0Tang/GestureGAN/blob/master/scripts/download_gesturegan_model.sh) for all the available GestureGAN models.
 

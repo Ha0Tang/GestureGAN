@@ -244,7 +244,7 @@ This source code is inspired by [Pix2pix](https://github.com/junyanz/pytorch-Cyc
 
 ## Related Projects (Controllable Image-to-Image Translation)
 
-### Keypoint/Skeleton Guided Person/Gesture/Facial Image Generation
+### Keypoint/Skeleton Guided Person/Gesture Image Generation
 Person
 - [Dense Intrinsic Appearance Flow for Human Pose Transfer(CVPR 2019, PyTorch)](https://github.com/ly015/intrinsic_flow)
 - [Progressive Pose Attention for Person Image Generation (CVPR 2019, PyTorch)](https://github.com/tengteng95/Pose-Transfer)
@@ -256,6 +256,11 @@ Person
 
 Gesture
 - [Gesture-to-Gesture Translation in the Wild via Category-Independent Conditional Maps (ACM MM 2019, PyTorch)](https://github.com/yhlleo/TriangleGAN)
+
+### Label/Landmark Guided Facial Image Generation
+- [Few-Shot Adversarial Learning of Realistic Neural Talking Head Models (PyTorch)](https://github.com/grey-eye/talking-heads)
+- [GANimation: Anatomically-aware Facial Animation from a Single Image (ECCV 2018, PyTorch)](https://github.com/albertpumarola/GANimation)
+- [StarGAN: Unified Generative Adversarial Networks for Multi-Domain Image-to-Image Translation (CVPR 2018, PyTorch)](https://github.com/yunjey/stargan)
 
 ### Semantic Map Guided Cross-View Image Translation
 - [Multi-Channel Attention Selection GAN with Cascaded Semantic Guidance for Cross-View Image Translation (CVPR 2019, PyTorch)](https://github.com/Ha0Tang/SelectionGAN)

@@ -30,18 +30,17 @@ class GestureGANTwoCycleModel(BaseModel):
         BaseModel.initialize(self, opt)
         self.isTrain = opt.isTrain
         # specify the training losses you want to print out. The program will call base_model.get_current_losses
-        # self.loss_names = ['G_GAN_D1', 'Gi_L1', 'G' , 'D1_real', 'D1_fake','D1']
         self.loss_names = ['G_GAN_D1',  'G_GAN_D2', 'G_L1', 'G_VGG', 'reg', 'G','D1','D2']
         # specify the images you want to save/display. The program will call base_model.get_current_visuals
         self.visual_names = ['real_A', 'real_D', 'fake_B', 'real_B', 'real_C', 'recovery_A']
         # self.visual_names = ['fake_B', 'fake_D']
         # specify the models you want to save to the disk. The program will call base_model.save_networks and base_model.load_networks
         if self.isTrain:
-            self.model_names = ['Gi','D1','D2']
+            self.model_names = ['G','D1','D2']
         else:  # during test time, only load Gs
-            self.model_names = ['Gi']
+            self.model_names = ['G']
         # load/define networks
-        self.netGi = networks.define_G(6, 3, opt.ngf,
+        self.netG = networks.define_G(6, 3, opt.ngf,
                                       opt.which_model_netG, opt.norm, not opt.no_dropout, opt.init_type, opt.init_gain, self.gpu_ids)
 
         if self.isTrain:
@@ -69,7 +68,7 @@ class GestureGANTwoCycleModel(BaseModel):
             # self.optimizer_D = torch.optim.Adam(self.netD.parameters(),
             #                                     lr=opt.lr, betas=(opt.beta1, 0.999))
 
-            self.optimizer_G = torch.optim.Adam(self.netGi.parameters(),
+            self.optimizer_G = torch.optim.Adam(self.netG.parameters(),
                                                 lr=opt.lr, betas=(opt.beta1, 0.999))
             self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD1.parameters(),self.netD2.parameters()),
                                                 lr=opt.lr, betas=(opt.beta1, 0.999))
@@ -88,20 +87,20 @@ class GestureGANTwoCycleModel(BaseModel):
     def forward(self):
         combine_realA_realD=torch.cat((self.real_A, self.real_D), 1)
         # combine_ACD=torch.cat((self.real_A, self.real_D), 1)
-        self.fake_B = self.netGi(combine_realA_realD)
+        self.fake_B = self.netG(combine_realA_realD)
         combine_fakeB_realC=torch.cat((self.fake_B, self.real_C), 1)
-        self.recovery_A = self.netGi(combine_fakeB_realC)
+        self.recovery_A = self.netG(combine_fakeB_realC)
 
         combine_realB_real_C=torch.cat((self.real_B, self.real_C), 1)
-        self.fake_A = self.netGi(combine_realB_real_C)
+        self.fake_A = self.netG(combine_realB_real_C)
         combine_fakeA_realD=torch.cat((self.fake_A, self.real_D), 1)
-        self.recovery_B = self.netGi(combine_fakeA_realD)
+        self.recovery_B = self.netG(combine_fakeA_realD)
 
 
         combine_realA_realC=torch.cat((self.real_A, self.real_C), 1)
-        self.identity_A = self.netGi(combine_realA_realC)
+        self.identity_A = self.netG(combine_realA_realC)
         combine_realB_realD=torch.cat((self.real_B, self.real_D), 1)
-        self.identity_B = self.netGi(combine_realB_realD)
+        self.identity_B = self.netG(combine_realB_realD)
 
     def backward_D1(self):
         # Fake

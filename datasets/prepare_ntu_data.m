@@ -1,14 +1,14 @@
 clear all;close all;clc;
 
 image_folder='./ntu_image_skeleton/ntu_image';
-skeleton_folder='/ntu_image_skeleton/ntu_skeleton';
+skeleton_folder='./ntu_image_skeleton/ntu_skeleton';
 
-txt_file ='./ntu_split/ntu_test.txt';
-save_folder='./ntu/test';
+% Uncomment for testing data
+%txt_file ='./ntu_split/ntu_test.txt';
+%save_folder='./ntu/test';
 
-% Uncomment for training data
-% txt_file ='./ntu_split/ntu_train.txt';
-% save_folder='./ntu/train';
+txt_file ='./ntu_split/ntu_train.txt';
+save_folder='./ntu/train';
 
 if ~isfolder(save_folder)
     mkdir(save_folder)

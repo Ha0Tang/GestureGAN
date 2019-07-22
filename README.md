@@ -7,7 +7,7 @@
 # GestureGAN for Controllable Image-to-Image Translation
 
 ## GestureGAN Framework
-![Framework](./imgs/framework.jpg)
+![Framework](./imgs/gsturegan_framework.jpg)
 
 ## Comparison with State-of-the-Art Image-to-Image Transaltion Methods
 ![Framework Comparison](./imgs/comparison.jpg)

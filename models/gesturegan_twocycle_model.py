@@ -176,7 +176,7 @@ class GestureGANTwoCycleModel(BaseModel):
         self.fake_B_red = self.fake_B[:,0:1,:,:]
         self.fake_B_green = self.fake_B[:,1:2,:,:]
         self.fake_B_blue = self.fake_B[:,2:3,:,:]
-        # print(self.fake_A_red.size())
+
         self.real_B_red = self.real_B[:,0:1,:,:]
         self.real_B_green = self.real_B[:,1:2,:,:]
         self.real_B_blue = self.real_B[:,2:3,:,:]
@@ -184,7 +184,7 @@ class GestureGANTwoCycleModel(BaseModel):
         self.fake_A_red = self.fake_A[:,0:1,:,:]
         self.fake_A_green = self.fake_A[:,1:2,:,:]
         self.fake_A_blue = self.fake_A[:,2:3,:,:]
-        # print(self.fake_A_red.size())
+
         self.real_A_red = self.real_A[:,0:1,:,:]
         self.real_A_green = self.real_A[:,1:2,:,:]
         self.real_A_blue = self.real_A[:,2:3,:,:]

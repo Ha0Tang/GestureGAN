@@ -3,8 +3,12 @@
 [![Packagist](https://img.shields.io/badge/Pytorch-0.4.1-red.svg)]()
 
 ![GestureGAN demo](https://github.com/Ha0Tang/GestureGAN/blob/master/imgs/gesture_results.gif)
+GestureGAN for hand gesture-to-gesture tranlation task. Given an image and some novel hand skeletons, GestureGAN is able
+to generate the same person but with different hand gestures.
 
 ![GestureGAN demo](https://github.com/Ha0Tang/GestureGAN/blob/master/imgs/view_results.gif)
+GestureGAN for cross-view image tranlation task. Given an image and some novel semantic maps, GestureGAN is able
+to generate the same scene but with different viewpoints.
 
 # GestureGAN for Controllable Image-to-Image Translation
 

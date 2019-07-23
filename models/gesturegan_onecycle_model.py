@@ -10,10 +10,6 @@ class GestureGANOneCycleModel(BaseModel):
 
     @staticmethod
     def modify_commandline_options(parser, is_train=True):
-
-        # changing the default values to match the pix2pix paper
-        # (https://phillipi.github.io/pix2pix/)
-        # parser.set_defaults(pool_size=0, no_lsgan=True, norm='batch')
         parser.set_defaults(pool_size=0, no_lsgan=True, norm='instance')
         parser.set_defaults(dataset_mode='aligned')
         parser.set_defaults(which_model_netG='resnet_9blocks')
@@ -37,11 +33,9 @@ class GestureGANOneCycleModel(BaseModel):
         else:
             self.visual_names = ['real_A', 'real_D', 'fake_B', 'real_B', 'real_C', 'recovery_A', 'identity_A']
         
-        # self.visual_names = ['fake_B', 'fake_D']
-        # specify the models you want to save to the disk. The program will call base_model.save_networks and base_model.load_networks
         if self.isTrain:
             self.model_names = ['G','D1','D2']
-        else:  # during test time, only load Gs
+        else:  # during test time, only load G
             self.model_names = ['G']
         # load/define networks
         self.netG = networks.define_G(6, 3, opt.ngf,
@@ -56,7 +50,6 @@ class GestureGANOneCycleModel(BaseModel):
                                           opt.which_model_netD,
                                           opt.n_layers_D, opt.norm, use_sigmoid, opt.init_type, opt.init_gain, self.gpu_ids)
 
-
         if self.isTrain:
             self.fake_AB_pool = ImagePool(opt.pool_size)
 
@@ -67,11 +60,6 @@ class GestureGANOneCycleModel(BaseModel):
 
             # initialize optimizers
             self.optimizers = []
-            # self.optimizer_G = torch.optim.Adam(self.netG.parameters(),
-            #                                     lr=opt.lr, betas=(opt.beta1, 0.999))
-            # self.optimizer_D = torch.optim.Adam(self.netD.parameters(),
-            #                                     lr=opt.lr, betas=(opt.beta1, 0.999))
-
             self.optimizer_G = torch.optim.Adam(self.netG.parameters(),
                                                 lr=opt.lr, betas=(opt.beta1, 0.999))
             self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD1.parameters(),self.netD2.parameters()),
@@ -90,7 +78,6 @@ class GestureGANOneCycleModel(BaseModel):
 
     def forward(self):
         combine_AD=torch.cat((self.real_A, self.real_D), 1)
-        # combine_ACD=torch.cat((self.real_A, self.real_D), 1)
         self.fake_B = self.netG(combine_AD)
         combine_BC=torch.cat((self.fake_B, self.real_C), 1)
         self.recovery_A = self.netG(combine_BC)
@@ -135,15 +122,17 @@ class GestureGANOneCycleModel(BaseModel):
 
 
     def backward_G(self):
-        # First, G(A) should fake the discriminator
+        # fake_B should fake the discriminator D1
         fake_AB = torch.cat((self.real_A, self.fake_B), 1)
         pred_D1_fake = self.netD1(fake_AB)
         self.loss_G_GAN_D1 = self.criterionGAN(pred_D1_fake, True)
 
+        # fake_B should fake the discriminator D2
         fake_ADB = torch.cat((self.real_A, self.real_D, self.fake_B), 1)
         pred_D2_fake = self.netD2(fake_ADB)
         self.loss_G_GAN_D2 = self.criterionGAN(pred_D2_fake, True)
 
+        # color loss
         self.fake_B_red = self.fake_B[:,0:1,:,:]
         self.fake_B_green = self.fake_B[:,1:2,:,:]
         self.fake_B_blue = self.fake_B[:,2:3,:,:]
@@ -152,13 +141,13 @@ class GestureGANOneCycleModel(BaseModel):
         self.real_B_green = self.real_B[:,1:2,:,:]
         self.real_B_blue = self.real_B[:,2:3,:,:]
 
-        # second, G(A)=B
+        # color loss, pixel loss, cycle loss, identity loss
         self.loss_G_L1 = (self.criterionL1(self.fake_B_red, self.real_B_red) + self.criterionL1(self.fake_B_green, self.real_B_green) + self.criterionL1(self.fake_B_blue, self.real_B_blue)) * self.opt.lambda_L1 + self.criterionL1(self.fake_B, self.real_B) * self.opt.lambda_L1 + self.criterionL1(self.recovery_A, self.real_A) * self.opt.cyc_L1 + self.criterionL1(self.identity_A, self.real_A) * self.opt.lambda_identity
-
+        # feature loss
         self.loss_G_VGG = self.criterionVGG(self.fake_B, self.real_B) * self.opt.lambda_feat
-
+        # tv loss
         self.loss_reg = self.opt.REGULARIZATION * (torch.sum(torch.abs(self.fake_B[:, :, :, :-1] - self.fake_B[:, :, :, 1:])) + torch.sum(torch.abs(self.fake_B[:, :, :-1, :] - self.fake_B[:, :, 1:, :])))
-
+        # Combined loss of G
         self.loss_G = self.loss_G_GAN_D1 + self.loss_G_GAN_D2 + self.loss_G_L1 + self.loss_G_VGG + self.loss_reg 
 
         self.loss_G.backward()

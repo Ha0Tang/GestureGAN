@@ -219,7 +219,7 @@ Use `--how_many` to specify the maximum number of images to generate. By default
 
 - `train.py`, `test.py`: the entry point for training and testing.
 - `models/gesturegan_onecycle_model.py`, `models/gesturegan_twocycle_model.py`: creates the networks, and compute the losses.
-- `models/networks/`: defines the architecture of all models for gesturegan.
+- `models/networks/`: defines the architecture of all models for GestureGAN.
 - `options/`: creates option lists using `argparse` package.
 - `data/`: defines the class for loading images and controllable structures.
 

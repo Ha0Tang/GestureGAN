@@ -436,6 +436,7 @@ Use `--how_many` to specify the maximum number of images to generate. By default
 - `models/networks/`: defines the architecture of all models for GestureGAN.
 - `options/`: creates option lists using `argparse` package.
 - `data/`: defines the class for loading images and controllable structures.
+- `scripts/evaluations`: several evaluation code.
 
 ## Evaluation Code
 

@@ -6,6 +6,8 @@
 ![Contributing](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
 ![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
 [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/Ha0Tang/GestureGAN/issues/)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gesturegan-for-hand-gesture-to-gesture/gesture-to-gesture-translation-on-ntu-hand)](https://paperswithcode.com/sota/gesture-to-gesture-translation-on-ntu-hand?p=gesturegan-for-hand-gesture-to-gesture)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/gesturegan-for-hand-gesture-to-gesture/gesture-to-gesture-translation-on-senz3d)](https://paperswithcode.com/sota/gesture-to-gesture-translation-on-senz3d?p=gesturegan-for-hand-gesture-to-gesture)
 
 ![GestureGAN demo](https://github.com/Ha0Tang/GestureGAN/blob/master/imgs/gesture_results.gif)
 GestureGAN for hand gesture-to-gesture tranlation task. Given an image and some novel hand skeletons, GestureGAN is able

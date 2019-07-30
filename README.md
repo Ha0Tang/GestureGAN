@@ -448,7 +448,7 @@ We use several metrics to evaluate the quality of the generated images:
 - Cross-view image translation: [Inception Score (IS)](https://github.com/Ha0Tang/SelectionGAN/blob/master/scripts/evaluation/compute_topK_KL.py), need install `python 2.7` **|** [Accuracy](https://github.com/Ha0Tang/SelectionGAN/blob/master/scripts/evaluation/compute_accuracies.py), need install `python 2.7` **|** [KL score](https://github.com/Ha0Tang/SelectionGAN/blob/master/scripts/evaluation/KL_model_data.py), need install `python 2.7` **|** 
 [SSIM, PSNR, SD](https://github.com/Ha0Tang/SelectionGAN/blob/master/scripts/evaluation/compute_ssim_psnr_sharpness.lua), need install `Lua` **|** [LPIPS](https://github.com/richzhang/PerceptualSimilarity)
 
-### Citation
+## Citation
 If you use this code for your research, please cite our papers.
 ```
 @inproceedings{tang2018gesturegan,

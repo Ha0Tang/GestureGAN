@@ -24,7 +24,7 @@ to generate the same scene but with different viewpoints.
 ## Comparison with State-of-the-Art Image-to-Image Transaltion Methods
 ![Framework Comparison](./imgs/comparison.jpg)
 
-### [Conference paper](https://arxiv.org/abs/1808.04859) | [Project page (Conference paper)](http://disi.unitn.it/~hao.tang/project/GestureGAN.html) | [Slides](http://disi.unitn.it/~hao.tang/uploads/slides/GestureGAN_MM18.pptx) | [Poster](http://disi.unitn.it/~hao.tang/uploads/posters/GestureGAN_MM18.pdf)
+### [Conference paper](https://arxiv.org/abs/1808.04859) | [Extended paper](https://arxiv.org/abs/1912.06112) | [Project page](http://disi.unitn.it/~hao.tang/project/GestureGAN.html) | [Slides](http://disi.unitn.it/~hao.tang/uploads/slides/GestureGAN_MM18.pptx) | [Poster](http://disi.unitn.it/~hao.tang/uploads/posters/GestureGAN_MM18.pdf)
 
 GestureGAN for Hand Gesture-to-Gesture Translation in the Wild.<br>
 [Hao Tang](http://disi.unitn.it/~hao.tang/)<sup>1</sup>, [Wei Wang](https://weiwangtrento.github.io/)<sup>1,2</sup>, [Dan Xu](http://www.robots.ox.ac.uk/~danxu/)<sup>1,3</sup>, [Yan Yan](https://userweb.cs.txstate.edu/~y_y34/)<sup>4</sup> and [Nicu Sebe](http://disi.unitn.it/~sebe/)<sup>1</sup>. <br> 
@@ -450,6 +450,13 @@ We use several metrics to evaluate the quality of the generated images:
 ## Citation
 If you use this code for your research, please cite our papers.
 ```
+@article{tang2019unified,
+  title={Unified Generative Adversarial Networks for Controllable Image-to-Image Translation},
+  author={Tang, Hao and Liu, Hong and Sebe, Nicu},
+  journal={arXiv preprint arXiv:1912.06112},
+  year={2019}
+}
+
 @inproceedings{tang2018gesturegan,
   title={GestureGAN for Hand Gesture-to-Gesture Translation in the Wild},
   author={Tang, Hao and Wang, Wei and Xu, Dan and Yan, Yan and Sebe, Nicu},

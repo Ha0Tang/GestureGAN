@@ -10,6 +10,8 @@
     $ cd Inception-Score
 
 ## launch repo
+    Change data folder [Here](https://github.com/Ha0Tang/GestureGAN/blob/db5a420d2a3dce1e7f7b6d1a416f05daa0c6aea8/scripts/evaluation/IS/inception_score.py#L102)
+    
     $ python inception_score.py
 
 # References

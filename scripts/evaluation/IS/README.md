@@ -1,8 +1,8 @@
 # Requirements
-  - tensorflow 1.3.0: `pip install tensorflow==1.3.0`
-  - python 2.7.12
-  - numpy 1.13.1
-  - scipy 0.17.0
+  - Python 2.7.12
+  - Tensorflow 1.3.0: `pip install tensorflow==1.3.0`
+  - Numpy 1.13.1
+  - Scipy 0.17.0
   
 # Usages
 ## download repo

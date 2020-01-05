@@ -6,7 +6,7 @@
   
 # Usages
 ## download repo
-    $ git clone https://github.com/nnuyi/Inception-Score.git
+    $ git clone https://github.com/Ha0Tang/GestureGAN
     $ cd Inception-Score
 
 ## launch repo

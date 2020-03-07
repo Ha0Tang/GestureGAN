@@ -94,6 +94,8 @@ Train/Test splits for Dayton dataset can be downloaded from [here](https://githu
 **Preparing CVUSA Dataset**. The dataset can be downloaded [here](https://drive.google.com/drive/folders/0BzvmHzyo_zCAX3I4VG1mWnhmcGc), which is from the [page](http://cs.uky.edu/~jacobs/datasets/cvusa/). After unzipping the dataset, prepare the training and testing data as discussed in [SelectionGAN](https://arxiv.org/abs/1904.06807). We also convert semantic maps to the color ones by using this [script](https://github.com/Ha0Tang/SelectionGAN/blob/master/scripts/convert_semantic_map_cvusa.m).
 Since there is no semantic maps for the aerial images on this dataset, we use black images as aerial semantic maps for placehold purposes.
 
+Or you can directly download the prepared Dayton and CVUSA data from [here](https://github.com/Ha0Tang/SelectionGAN/tree/master/selectiongan_v1#dataset-preparation).
+
 **Preparing Your Own Datasets**. Each training sample in the dataset will contain {Ix,Iy,Cx,Cy}, where Ix=image x, Iy=image y, Cx=Controllable structure of image x, and Cy=Controllable structure of image y.
 Of course, you can use GestureGAN for your own datasets and tasks, such landmark-guided facial experssion translation and keypoint-guided person image generation.
 

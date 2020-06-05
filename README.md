@@ -118,7 +118,7 @@ python test.py --dataroot [path_to_dataset] \
 	--which_model_netG resnet_9blocks \
 	--which_direction AtoB \
 	--dataset_mode aligned \
-	--norm batch \
+	--norm instance \
 	--gpu_ids 0 \
 	--batchSize [BS] \
 	--loadSize [LS] \

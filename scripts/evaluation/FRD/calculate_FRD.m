@@ -14,8 +14,13 @@ sz = net.Layers(1).InputSize;
 layer = 'fc1000';
 ground_truth_feature_final = [];
 generated_feature_final = [];
-for o=3:length(Image)
-    fprintf('%d / %d \n', o-2, length(Image)-2);
+
+for o=1:length(Image)
+    fprintf('%d / %d \n', o, length(Image)-2);
+    if( isequal( Image(o).name, '.' ) || isequal( Image(o).name, '..' ))    
+        continue;
+    end
+    
 	generated_image_path = fullfile( fake_image_folder, Image( o ).name);
 	generated_image=imread(generated_image_path);
 	ground_image_path=fullfile( real_image_folder, Image( o ).name);

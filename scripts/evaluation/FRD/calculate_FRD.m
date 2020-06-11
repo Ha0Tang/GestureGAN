@@ -21,17 +21,18 @@ for o=1:length(Image)
         continue;
     end
     
-	generated_image_path = fullfile( fake_image_folder, Image( o ).name);
-	generated_image=imread(generated_image_path);
-	ground_image_path=fullfile( real_image_folder, Image( o ).name);
-	ground_truth_image=imread(ground_image_path);
-
-	ground_truth_feature = activations(net, ground_truth_image, layer);
-	generated_feature = activations(net, generated_image, layer);
+    generated_image_path = fullfile( fake_image_folder, Image( o ).name);
+    generated_image=imread(generated_image_path);
+    ground_image_path=fullfile( real_image_folder, Image( o ).name);
+    ground_truth_image=imread(ground_image_path);
+    
+    ground_truth_feature = activations(net, ground_truth_image, layer);
+    generated_feature = activations(net, generated_image, layer);
     
     for i=1:length(ground_truth_feature)
         ground_truth_feature_final(1,i) = ground_truth_feature(:,:,i);
     end
+    
     for i=1:length(generated_feature)
         generated_feature_final(1,i) = generated_feature(:,:,i);
     end
@@ -40,6 +41,7 @@ for o=1:length(Image)
       
     fvd_score(o)=fvd;
 end
+
 display(Image_folder_name)
 final_fvd_score=mean(fvd_score)
 

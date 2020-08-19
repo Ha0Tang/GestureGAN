@@ -455,8 +455,8 @@ If you use this code for your research, please cite our papers.
 @article{tang2019unified,
   title={Unified Generative Adversarial Networks for Controllable Image-to-Image Translation},
   author={Tang, Hao and Liu, Hong and Sebe, Nicu},
-  journal={arXiv preprint arXiv:1912.06112},
-  year={2019}
+  journal={TIP},
+  year={2020}
 }
 
 @inproceedings{tang2018gesturegan,

@@ -464,7 +464,7 @@ We use several metrics to evaluate the quality of the generated images:
 [SSIM, PSNR, SD](https://github.com/Ha0Tang/SelectionGAN/tree/master/selectiongan_v1/scripts/evaluation/compute_ssim_psnr_sharpness.lua), need install `Lua` **|** [LPIPS](https://github.com/richzhang/PerceptualSimilarity)
 
 ## Acknowledgments
-This source code is inspired by [Pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix). We want to thank the NVIDIA Corporation for the donation of the TITAN Xp GPUs used in this work.
+This source code is inspired by [Pix2pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN). We want to thank the NVIDIA Corporation for the donation of the TITAN Xp GPUs used in this work.
 
 ## Related Projects
 **[BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN) | [XingGAN](https://github.com/Ha0Tang/XingGAN) | [C2GAN](https://github.com/Ha0Tang/C2GAN) | [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) | [Guided-I2I-Translation-Papers](https://github.com/Ha0Tang/Guided-I2I-Translation-Papers)**

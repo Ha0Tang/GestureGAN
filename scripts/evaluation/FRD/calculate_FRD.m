@@ -23,10 +23,10 @@ for o=1:length(Image)
     
     generated_image_path = fullfile( fake_image_folder, Image( o ).name);
     generated_image=imread(generated_image_path);
-    % generated_image=imresize(generated_image, [sz(1), sz(2)]); % for other resolutions such as 64*64
+    % generated_image=imresize(generated_image, [sz(1), sz(2)]); % uncomment this line for other resolutions such as 64*64, 512*512
     ground_image_path=fullfile( real_image_folder, Image( o ).name);
     ground_truth_image=imread(ground_image_path);
-    % ground_truth_image=imresize(ground_truth_image, [sz(1), sz(2)]); % for other resolutions such as 64*64
+    % ground_truth_image=imresize(ground_truth_image, [sz(1), sz(2)]); % uncomment this line for other resolutions such as 64*64, 512*512
     
     ground_truth_feature = activations(net, ground_truth_image, layer);
     generated_feature = activations(net, generated_image, layer);

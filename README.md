@@ -489,6 +489,8 @@ GestureGAN
 }
 ```
 
+If you use the original [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN), [XingGAN](https://github.com/Ha0Tang/XingGAN), [C2GAN](https://github.com/Ha0Tang/C2GAN), and [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) model, please cite the following papers:
+
 BiGraphGAN
 ```
 @inproceedings{tang2020bipartite,
